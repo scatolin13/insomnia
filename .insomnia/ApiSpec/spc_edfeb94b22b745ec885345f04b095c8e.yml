@@ -1,0 +1,120 @@
+_id: spc_edfeb94b22b745ec885345f04b095c8e
+type: ApiSpec
+parentId: wrk_d8763a740cfa41b4ab22f3763e69d09b
+modified: 1687577089433
+created: 1687573846583
+fileName: DocOpenAPI
+contents: >-
+  openapi: 3.0.0
+
+  info:
+    description: "Este documento tem como objetivo orientar o desenvolvedor na utilização do Webservice para inclusão de formulários SRQ-20 para o FAPonline - Software 100% Web orientado para Gestão de FAP/NTEP e Absenteísmos Médicos"
+    version: 1.0.0
+    title: Formulário SQR-20
+    contact:
+      name: Suporte Milaneli
+      email: suporte@milaneli.com.br
+  tags:
+    - name: SRQ-20
+      description: Formulário SRQ-20
+      externalDocs:
+        description: Para mais informações
+        url: http://swagger.io
+  paths:
+    /formulario/get-formulario-srq20:
+      get:
+        tags:
+          - SRQ-20
+        parameters:
+          - in: header
+            name: API-Key
+            schema:
+              type: string
+              format: uuid
+            required: true
+        summary: Buscar formuário SRQ-20
+        description: Para retornar os Ids que serão utilizados para preencher o xml com o formulário, poderá utilizar o método GET “ExportarFormulário” pasando como parâmetro o Id do formulário que deseja retornar. 
+        operationId: findFormularioSqr20
+        responses:
+          "200":
+            description: successful operation
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/FormularioSrq20"
+          "400":
+            description: Invalid status value
+    /formulario/adicionar:
+      post:
+        tags:
+          - SRQ-20
+        summary: Responder questionários do formulário SRQ-20
+        description: "Método utilizado para incluir Formulário SRQ-20 no FAPonline."
+        operationId: addFormularioSrq20
+        requestBody:
+          $ref: "#/components/requestBodies/FormularioSrq20"
+        responses:
+          "200":
+            description: successful operation
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/FormularioSrq20"
+          "400":
+            description: Invalid status value
+  externalDocs:
+    description: Find out more about Swagger
+    url: http://swagger.io
+  servers:
+    - url: https://localhost:44335/api/v1
+  components:
+    requestBodies:
+      FormularioSrq20:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FormularioSrq20"
+        description: Formulario SRQ-20
+        required: true
+    securitySchemes:
+      bearerAuth:
+        type: http
+        scheme: bearer
+        bearerFormat: JWT
+    schemas:
+      FormularioSrq20:
+        type: object
+        properties:
+          formularioId:
+            type: integer
+            format: int64
+          registroFuncionario:
+            type: integer
+            format: int64
+          questionario:
+            $ref: "#/components/schemas/Questionario"
+        xml:
+          name: FormularioSrq20
+      Questionario:
+        type: object
+        properties:
+          Questao:
+            $ref: "#/components/schemas/Questao"
+        xml:
+          name: Questionario          
+      Questao:
+        type: object
+        properties:
+          PerguntaId:
+            type: integer
+            format: int64
+          RespostaId:
+            type: integer
+            format: int64
+        xml:
+          name: Questao
+contentType: yaml
