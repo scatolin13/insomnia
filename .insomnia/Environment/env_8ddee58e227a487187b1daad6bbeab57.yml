@@ -1,0 +1,18 @@
+_id: env_8ddee58e227a487187b1daad6bbeab57
+type: Environment
+parentId: env_926c0aaa6c25470b9b0e144e06f904200209386c
+modified: 1688562569084
+created: 1687782829221
+name: Melhoria
+data:
+  endpoint: https://melhoria.faponline.com.br/
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVFMgVGVjaG5vbG9naWVzIiwiZW1haWwiOiJzdXBvcnRlQHRzdGVjaC5jb20iLCJpc1RlbXBvcmFyeSI6ZmFsc2UsInByaW1hcnlLZXkiOiJiMjBlN2JlYS0yYWJhLTQyMjktYjZhZi05NDk2YWQyNDRiZTQiLCJpYXQiOjE2ODYxODYzNjd9.vG1SoiZXnxFI7eNqCgzbo81JUo7c-EM-8uVVoKGADMg
+  api-key: e156cfdb-2687-4008-936f-c01e9026790c
+dataPropertyOrder:
+  "&":
+    - endpoint
+    - token
+    - api-key
+color: null
+isPrivate: false
+metaSortKey: 1687782829221

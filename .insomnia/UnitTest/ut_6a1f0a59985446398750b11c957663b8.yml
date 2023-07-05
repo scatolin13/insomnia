@@ -1,0 +1,13 @@
+_id: ut_6a1f0a59985446398750b11c957663b8
+type: UnitTest
+parentId: uts_0c4068264d3c4e51bb6f7c7a5be172ae
+modified: 1687786045225
+created: 1687784107881
+requestId: req_40cea43c939647a7a8e05b150f6d6a55
+name: Registrar Formulário 400
+code: |-
+  const response1 = await insomnia.send();
+  const body = JSON.parse(response1.data);
+
+  expect(body).to.be.an('string');
+  expect(response1.status).to.equal(200);

@@ -1,0 +1,51 @@
+_id: req_2feeeb911e5a422eb3be4601a9f52d7f
+type: Request
+parentId: fld_678a9b35796e4f55892dfddea141a7d8
+modified: 1687783911667
+created: 1687783018084
+url: "{{ _.endpoint }}api/v1/formulario/registrar-formulario-srq20"
+name: Registrar formulário
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "formularioId": 0,
+      "registroFuncionario": 0,
+      "questionario": [
+        {
+          "PerguntaId": 1,
+          "RespostaId": 2
+        },
+    		{
+          "PerguntaId": 2,
+          "RespostaId": 1
+        },
+    		{
+          "PerguntaId": 3,
+          "RespostaId": 2
+        }
+      ]
+    }
+parameters: []
+headers:
+  - id: pair_f923752aa5894b26924d3af8a0d1b0e9
+    name: Content-Type
+    value: application/json
+    description: ""
+  - id: pair_7601b06171c6463b8560ae575c042ba6
+    name: API-KEY
+    value: "{{ _['api-key'] }}"
+    description: ""
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1687783018084
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

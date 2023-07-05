@@ -1,9 +1,9 @@
 _id: spc_edfeb94b22b745ec885345f04b095c8e
 type: ApiSpec
 parentId: wrk_d8763a740cfa41b4ab22f3763e69d09b
-modified: 1687577089433
+modified: 1688563328689
 created: 1687573846583
-fileName: DocOpenAPI
+fileName: Formulario_OpenAPI
 contents: >-
   openapi: 3.0.0
 
@@ -23,6 +23,8 @@ contents: >-
   paths:
     /formulario/get-formulario-srq20:
       get:
+        security:
+          - bearerAuth: []
         tags:
           - SRQ-20
         parameters:
@@ -43,7 +45,7 @@ contents: >-
                 schema:
                   type: array
                   items:
-                    $ref: "#/components/schemas/FormularioSrq20"
+                    $ref: "#/components/schemas/FormularioBase"
           "400":
             description: Invalid status value
     /formulario/adicionar:
@@ -71,6 +73,7 @@ contents: >-
     url: http://swagger.io
   servers:
     - url: https://localhost:44335/api/v1
+    - url: https://melhoria.faponline.com.br/api/v1
   components:
     requestBodies:
       FormularioSrq20:
@@ -86,6 +89,56 @@ contents: >-
         scheme: bearer
         bearerFormat: JWT
     schemas:
+      FormularioBase:
+        type: object
+        properties:
+          StatusCode:
+            type: integer
+            format: int64
+          IsSuccess:
+            type: boolean
+            format: bool
+          Doc:
+            type: object
+            properties:
+              Value:
+                type: array
+                items:
+                  $ref: "#/components/schemas/FormularioRequest"
+              Messages:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    MessageType:
+                      type: string
+                      enum:
+                        - Success
+                        - Warning
+                    MessageText:
+                      type: string
+              Exceptions:
+                type: array
+                items:
+                  type: string
+              ContextData:
+                type: object
+      FormularioRequest:
+        type: object
+        properties:
+          FormularioId:
+            type: integer
+            format: int64
+          FormularioNome:
+            type: string
+          Secoes:
+            type: array
+            items:
+              type: object
+              properties:
+                SecaoId:
+                  type: integer
+                  format: int64
       FormularioSrq20:
         type: object
         properties:
@@ -100,9 +153,8 @@ contents: >-
         xml:
           name: FormularioSrq20
       Questionario:
-        type: object
-        properties:
-          Questao:
+        type: array
+        items:
             $ref: "#/components/schemas/Questao"
         xml:
           name: Questionario          
