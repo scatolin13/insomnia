@@ -1,7 +1,7 @@
 _id: spc_edfeb94b22b745ec885345f04b095c8e
 type: ApiSpec
 parentId: wrk_d8763a740cfa41b4ab22f3763e69d09b
-modified: 1688563328689
+modified: 1690203691362
 created: 1687573846583
 fileName: Formulario_OpenAPI
 contents: >-
@@ -21,6 +21,35 @@ contents: >-
         description: Para mais informações
         url: http://swagger.io
   paths:
+    /authentication/token:
+      get:
+        tags:
+          - SRQ-20
+        parameters:
+          - in: header
+            name: fap-user
+            schema:
+              type: string
+            required: true
+          - in: header
+            name: fap-pwd
+            schema:
+              type: string
+            required: true
+        summary: Buscar Token e API-Key
+        description: Retorna o Token e o API-Key necessários para chamadas dos outros endpoints. 
+        operationId: getToken
+        responses:
+          "200":
+            description: successful operation
+            content:
+              application/json:
+                schema:
+                  type: object
+                  items:
+                    $ref: "#/components/schemas/AuthenticationResponse"
+          "400":
+            description: Invalid status value
     /formulario/get-formulario-srq20:
       get:
         security:
@@ -89,6 +118,13 @@ contents: >-
         scheme: bearer
         bearerFormat: JWT
     schemas:
+      AuthenticationResponse:
+        type: object
+        properties:
+          Token:
+            type: string
+          ApiKey:
+            type: string
       FormularioBase:
         type: object
         properties:
