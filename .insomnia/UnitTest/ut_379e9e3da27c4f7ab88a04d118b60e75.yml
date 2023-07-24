@@ -1,0 +1,10 @@
+_id: ut_379e9e3da27c4f7ab88a04d118b60e75
+type: UnitTest
+parentId: uts_e9274c5c792841929f26ef9977455f8f
+modified: 1687784095640
+created: 1687783417348
+requestId: req_5f6edeb9b03944148b37c73a72fa69cb
+name: Register Formulário 200
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);

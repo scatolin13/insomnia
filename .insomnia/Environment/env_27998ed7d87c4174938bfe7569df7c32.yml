@@ -1,0 +1,24 @@
+_id: env_27998ed7d87c4174938bfe7569df7c32
+type: Environment
+parentId: env_926c0aaa6c25470b9b0e144e06f904200209386c
+modified: 1689856898567
+created: 1689856878193
+name: Treinamento
+data:
+  endpoint: https://localhost:44335/
+  endpoint-MS-Formulario: http://localhost:64353/
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4ZTc1ZDRhOS05ZjVlLTRjYjEtYTNhOC03NGI5YWI0NDAwNzIiLCJHcnVwb0NvcnBvcmF0aXZvIjoiMTkiLCJVc2VySWQiOiI1NjM1IiwiVXNlck5hbWUiOiJXZWIgU2VydmljZSBJdGHDuiIsIkVtcHJlc2FzIjoiNDA1MiIsIlBlcm1hbmVudGUiOiJUcnVlIiwibmJmIjoxNjg5ODE3OTAzLCJleHAiOjE2OTA2ODE5MDMsImlhdCI6MTY4OTgxNzkwM30.5bng58MFDzIcgpxlrXNNGNv0Mo8SVx7gVUQR1dJgj-M
+  invalid-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVFMgVGVjaG5vbG9naWVzIiwiZW1haWwiOiJzdXBvcnRlQHRzdGVjaC5jb20iLCJpc1RlbXBvcmFyeSI6ZmFsc2UsInByaW1hcnlLZXkiOiJiMjBlN2JlYS0yYWJhLTQyMjktYjZhZi05NDk2YWQyNDRiZTQiLCJpYXQiOjE2ODYxODYzNjd9.vG1SoiZXnxFI7eNqCgzbo81JUo7c-EM-8uVVoKGADMg
+  api-key: e156cfdb-2687-4008-936f-c01e9026790c
+  authorization: AD9B943076CC0B070724A18F99A49A499CBAB13123C2107A3E1F8517F78624B12F11F67D8478A73EB13B5360BEDA491AA4B78F6E1F2A729AE370D8FC478C6DCA
+dataPropertyOrder:
+  "&":
+    - endpoint
+    - endpoint-MS-Formulario
+    - token
+    - invalid-token
+    - api-key
+    - authorization
+color: null
+isPrivate: false
+metaSortKey: 1689856878193

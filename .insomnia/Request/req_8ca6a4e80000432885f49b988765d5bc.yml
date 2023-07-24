@@ -1,23 +1,27 @@
-_id: req_a6713c75ab4945fda35461c28a3cfe1c
+_id: req_8ca6a4e80000432885f49b988765d5bc
 type: Request
-parentId: fld_678a9b35796e4f55892dfddea141a7d8
-modified: 1688780916115
-created: 1687782983600
+parentId: fld_e8662b49a2f544ab8a06e3d243968ef1
+modified: 1687552141956
+created: 1687481227735
 url: "{{ _.endpoint }}api/v1/formulario/get-formulario-srq20"
-name: Retornar formulário
+name: Get Formulário
 description: ""
 method: GET
 body: {}
 parameters: []
 headers:
-  - id: pair_ce079397648f427bb958aca31e23b116
-    name: API-KEY
+  - id: pair_d9b9d3779fcb45b4aed5c1f33295d5db
+    name: API-Key
     value: "{{ _['api-key'] }}"
+    description: ""
+  - id: pair_a0c133b87dc14693bf3a864f70eb0005
+    name: Content-Type
+    value: application/json
     description: ""
 authentication:
   type: bearer
   token: "{{ _.token }}"
-metaSortKey: -1687782983600
+metaSortKey: -1685409178483
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

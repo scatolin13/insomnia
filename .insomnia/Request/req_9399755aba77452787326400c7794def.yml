@@ -1,0 +1,285 @@
+_id: req_9399755aba77452787326400c7794def
+type: Request
+parentId: fld_3bd082db9da64d7caeebd7a1783a60be
+modified: 1687539079266
+created: 1685407664155
+url: "{{ _.endpoint }}WebServices/FormulariosWS.asmx"
+name: Webservice Importação de Formulário SRQ-20
+description: >-
+  # Endpoint
+
+  POST {{ _.endpoint }}WebServices/FormulariosWS.asmx
+
+
+  Método utilizado para incluir Formulário SRQ-20 no FAPonline.
+
+
+  # Header (XML)
+
+
+  |Nome|Tipo|Tamanho|Descrição|Obrigatório|
+
+  |--------|-------|-------|---------------------|------|
+
+  |Usuario|String|250|Mesmo login utilizado no FAP-online|SIM|
+
+  |Senha|String|150|Mesma senha utilizada no FAP-online|SIM|
+
+
+  # Body (XML)
+
+  |Nome|Tipo|Descrição|Obrigatório|
+
+  |-----|----|---------------|-----|
+
+  |Formulários|Array|Lista de formulários|SIM|
+
+  |FormulariosSrq20|Object|Objeto do tipo formulário|SIM|
+
+  |FormularioId|Int|Id do formulário|SIM|
+
+  |FuncionarioRegistro|Int|Matrícula do funcionário|SIM|
+
+  |Questionarios|Array|Lista de questões com perguntas e respostas|SIM|
+
+  |Questionario|Objeto|Objeto contendo campos Pergunta e resposta|SIM|
+
+  |PerguntaId|Int|Id da pergunta|SIM|
+
+  |RespostaId|Int|Id da resposta|SIM|
+
+
+  # Request
+
+  |Nome|Tipo|Descrição|
+
+  |----|----|----------|
+
+  |FuncionarioRegistro|Int|Matrícula do funcionário|
+
+  |Sucesso|Booleano|True caso a importação seja realizada com sucesso.|
+
+  |||False caso tenha erro na importação|
+
+  |TemErro|Booleano|True caso tenha erro na importação.|
+
+  |||False caso a importação seja realizada com sucesso|
+
+  |Mensagens|Array|Lista de mensagens de sucesso ou erro|
+
+  |Mensagem|Objeto|Objeto contendo a mensagem de retorno|
+
+  |Codigo|Int|Código da mensagem (Segue lista de códigos abaixo)|
+
+  |Descricao|String|Descrição da mensagem|
+
+
+  # Código de Mensage
+
+
+  |Nome|Tipo|Descrição|
+
+  |-------------|------|---------|
+
+  |Codigo|Int|Código da Mensagem|
+
+  |Descrição|String|Mensagem de erro referente ao registro importado|
+
+
+  |Código|Descrição|
+
+  |------|---------|
+
+  |200|Cadastro realizado com sucesso|
+
+  |401|Usuário ou senha inválido|
+
+  |601|Funcionário não localizado|
+
+  |602|Formulário não localizado|
+
+  |603|Pergunta não localizada|
+
+  |604|Resposta não localizada|
+
+  |610|Tamanho do questionário não está de acordo com a base|
+
+
+  # Request exemplo
+
+
+  O Header deve ser adicionado os valores abaixo
+
+
+  |Key|Value|
+
+  |----|-----|
+
+  |Content-Type|application/soap+xml|
+
+  |Accept-Encoding|gzip,deflate|
+
+
+  O Body é do tipo "XML" conforme exemplo abaixo
+
+  	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  		 <soap:Header>
+  			<tem:ValidationSoapHeader>
+  				<tem:Usuario>user.login</tem:Usuario>
+  				<tem:Senha>$3nH@2@l9</tem:Senha>
+  			</tem:ValidationSoapHeader>
+  		</soap:Header>
+  		 <soap:Body>
+  				<tem:ImportarFormularioSRQ20V1>
+  					 <tem:formularios>
+  						 <tem:FormularioSrq20>
+  								<tem:FormularioId>10</tem:FormularioId>
+  								<tem:FuncionarioRegistro>123</tem:FuncionarioRegistro>
+  								<tem:Questionarios>
+  									 <tem:Questionario>
+  											<tem:PerguntaId>1</tem:PerguntaId>
+  											<tem:RespostaId>1</tem:RespostaId>
+  									 </tem:Questionario>
+  									<tem:Questionario>
+  											<tem:PerguntaId>2</tem:PerguntaId>
+  											<tem:RespostaId>1</tem:RespostaId>
+  									 </tem:Questionario>
+  									<tem:Questionario>
+  											<tem:PerguntaId>3</tem:PerguntaId>
+  											<tem:RespostaId>2</tem:RespostaId>
+  									 </tem:Questionario>
+  								</tem:Questionarios>
+  						 </tem:FormularioSrq20>
+  						<tem:FormularioSrq20>
+  								<tem:FormularioId>10</tem:FormularioId>
+  								<tem:FuncionarioRegistro>321</tem:FuncionarioRegistro>
+  								<tem:Questionarios>
+  									 <tem:Questionario>
+  											<tem:PerguntaId>1</tem:PerguntaId>
+  											<tem:RespostaId>2</tem:RespostaId>
+  									 </tem:Questionario>
+  									<tem:Questionario>
+  											<tem:PerguntaId>2</tem:PerguntaId>
+  											<tem:RespostaId>2</tem:RespostaId>
+  									 </tem:Questionario>
+  									<tem:Questionario>
+  											<tem:PerguntaId>3</tem:PerguntaId>
+  											<tem:RespostaId>1</tem:RespostaId>
+  									 </tem:Questionario>
+  								</tem:Questionarios>
+  						 </tem:FormularioSrq20>
+  					 </tem:formularios>
+  				</tem:ImportarFormularioSRQ20V1>
+  		 </soap:Body>
+  	</soap:Envelope>
+
+  # Response de exemplo
+
+  	<?xml version="1.0" encoding="utf-8"?>
+  	<soap:Envelope
+  		xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+  		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  		xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  		<soap:Body>
+  			<ImportarFormularioSRQ20V1Response
+  				xmlns="http://tempuri.org/">
+  				<ImportarFormularioSRQ20V1Result>
+  					<RetornoFormulario>
+  						<FuncionarioRegistro>123</FuncionarioRegistro>
+  						<Sucesso>true</Sucesso>
+  						<TemErro>false</TemErro>
+  						<Mensagens>
+  							<Mensagem>
+  								<Codigo>200</Codigo>
+  								<Descricao>Formulário inserido com sucesso</Descricao>
+  							</Mensagem>
+  						</Mensagens>
+  					</RetornoFormulario>
+  					<RetornoFormulario>
+  						<FuncionarioRegistro>321</FuncionarioRegistro>
+  						<Sucesso>true</Sucesso>
+  						<TemErro>false</TemErro>
+  						<Mensagens>
+  							<Mensagem>
+  								<Codigo>200</Codigo>
+  								<Descricao>Formulário inserido com sucesso</Descricao>
+  							</Mensagem>
+  						</Mensagens>
+  					</RetornoFormulario>
+  				</ImportarFormularioSRQ20V1Result>
+  			</ImportarFormularioSRQ20V1Response>
+  		</soap:Body>
+  	</soap:Envelope>
+method: POST
+body:
+  mimeType: application/xml
+  text: >-
+    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:tem="http://tempuri.org/">
+    		 <soap:Header>
+    			<tem:ValidationSoapHeader>
+    				<tem:Usuario>user.login</tem:Usuario>
+    				<tem:Senha>$3nH@2@l9</tem:Senha>
+    			</tem:ValidationSoapHeader>
+    		</soap:Header>
+    		 <soap:Body>
+    				<tem:ImportarFormularioSRQ20V1>
+    					 <tem:formularios>
+    						 <tem:FormularioSrq20>
+    								<tem:FormularioId>10</tem:FormularioId>
+    								<tem:FuncionarioRegistro>123</tem:FuncionarioRegistro>
+    								<tem:Questionarios>
+    									 <tem:Questionario>
+    											<tem:PerguntaId>1</tem:PerguntaId>
+    											<tem:RespostaId>1</tem:RespostaId>
+    									 </tem:Questionario>
+    									<tem:Questionario>
+    											<tem:PerguntaId>2</tem:PerguntaId>
+    											<tem:RespostaId>1</tem:RespostaId>
+    									 </tem:Questionario>
+    									<tem:Questionario>
+    											<tem:PerguntaId>3</tem:PerguntaId>
+    											<tem:RespostaId>2</tem:RespostaId>
+    									 </tem:Questionario>
+    								</tem:Questionarios>
+    						 </tem:FormularioSrq20>
+    						<tem:FormularioSrq20>
+    								<tem:FormularioId>10</tem:FormularioId>
+    								<tem:FuncionarioRegistro>321</tem:FuncionarioRegistro>
+    								<tem:Questionarios>
+    									 <tem:Questionario>
+    											<tem:PerguntaId>1</tem:PerguntaId>
+    											<tem:RespostaId>2</tem:RespostaId>
+    									 </tem:Questionario>
+    									<tem:Questionario>
+    											<tem:PerguntaId>2</tem:PerguntaId>
+    											<tem:RespostaId>2</tem:RespostaId>
+    									 </tem:Questionario>
+    									<tem:Questionario>
+    											<tem:PerguntaId>3</tem:PerguntaId>
+    											<tem:RespostaId>1</tem:RespostaId>
+    									 </tem:Questionario>
+    								</tem:Questionarios>
+    						 </tem:FormularioSrq20>
+    					 </tem:formularios>
+    				</tem:ImportarFormularioSRQ20V1>
+    		 </soap:Body>
+    	</soap:Envelope>
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/soap+xml
+    id: pair_9aff7f4c6d1747f4b8f3a8cfea7ba2e0
+  - id: pair_0f3e6c7764074ac599961551a8b6c147
+    name: Accept-Encoding
+    value: gzip,deflate
+    description: ""
+authentication: {}
+metaSortKey: -1685407664155
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
