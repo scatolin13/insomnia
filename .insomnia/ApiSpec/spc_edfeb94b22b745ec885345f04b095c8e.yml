@@ -1,7 +1,7 @@
 _id: spc_edfeb94b22b745ec885345f04b095c8e
 type: ApiSpec
 parentId: wrk_d8763a740cfa41b4ab22f3763e69d09b
-modified: 1690203691362
+modified: 1690288811962
 created: 1687573846583
 fileName: Formulario_OpenAPI
 contents: >-
@@ -27,12 +27,7 @@ contents: >-
           - SRQ-20
         parameters:
           - in: header
-            name: fap-user
-            schema:
-              type: string
-            required: true
-          - in: header
-            name: fap-pwd
+            name: authentication-token
             schema:
               type: string
             required: true
@@ -45,7 +40,6 @@ contents: >-
             content:
               application/json:
                 schema:
-                  type: object
                   items:
                     $ref: "#/components/schemas/AuthenticationResponse"
           "400":
@@ -121,10 +115,19 @@ contents: >-
       AuthenticationResponse:
         type: object
         properties:
-          Token:
-            type: string
-          ApiKey:
-            type: string
+          StatusCode:
+            type: integer
+            format: int64
+          IsSuccess:
+            type: boolean
+            format: bool
+          Doc:
+            type: object
+            properties:
+              Token:
+                type: string
+              ApiKey:
+                type: string
       FormularioBase:
         type: object
         properties:
