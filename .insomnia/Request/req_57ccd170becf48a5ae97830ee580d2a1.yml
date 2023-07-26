@@ -1,7 +1,7 @@
 _id: req_57ccd170becf48a5ae97830ee580d2a1
 type: Request
 parentId: fld_5ee1021931294aa991e31fd051749336
-modified: 1690375736578
+modified: 1690375958153
 created: 1689728005332
 url: "{{ _.endpoint }}api/v1/authentication/token"
 name: Get Token
@@ -47,8 +47,8 @@ description: >-
   		"StatusCode": 200,
   		"IsSuccess": true,
   		"Doc": {
-  			"Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3N2NiZDVjYi03ZWQ3LTQ0OTktYjRlMi0wOTQxNDEwNDQ5MTYiLCJDb3Jwb3JhdGVHcm91cElkIjoiMTkiLCJVc2VySWQiOiI1NjM1IiwiVXNlck5hbWUiOiJXZWIgU2VydmljZSBJdGHDuiIsIlVzZXJDb21wYW55IjoiNDA1MiIsIlVzZXJQcm9maWxlIjoiSW50ZXJmYWNlX1dlYnNlcnZpY2UiLCJuYmYiOjE2OTAyOTA2NTUsImV4cCI6MTY5MTE1NDY1NSwiaWF0IjoxNjkwMjkwNjU1fQ.ZhHwVvtJEioydidSEr0Hd2XXFgv9fL6drmML5J1k338",
-  			"ApiKey": "e156cfdb-2687-4008-936f-c01e9026790c"
+  			"Token": "eyJhbGciOiJIUzI2NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3N2NiZDVjYi03ZWQ3LTQ0OTktYjRlMi0wOTQxNDEwNDQ5MTYiLCJDb3Jwb3JhdGVHcm91cElkIjoiMTkiLCJVc5VySWQiOiI1NjN1IiwiVXNlck5hbWUiOiJXZWIgU2VydmljZSBJdGHDuiIsIlVzZXJDb21wYW55IjoiNDA1MiIsIlVzZXJQcm9maWxlIjoiSW50ZXJmYWNlX1dlYnNlcnZpY2UiLCJuYmYiOjE2OTAyOTA2NTUsImV4cCI6MTY5MTE1NDY1NSwiaWF0IjoxNjkwMjkwNjU1fQ.ZhHwZvtJEioydidSEr0Hd2XXFgv9fL6drmML5J1k338",
+  			"ApiKey": "e156cfdb-0000-4008-936c-b01e9026790c"
   		},
   		"Error": null
   	}
