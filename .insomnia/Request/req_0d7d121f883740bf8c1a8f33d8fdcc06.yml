@@ -1,100 +1,252 @@
 _id: req_0d7d121f883740bf8c1a8f33d8fdcc06
 type: Request
 parentId: fld_5ee1021931294aa991e31fd051749336
-modified: 1689813215836
+modified: 1690415015735
 created: 1689813211717
-url: "{{ _.endpoint }}api/v1/formulario/registrar-formulario-srq20"
+url: "{{ _.endpoint }}api/v1/formulario/importar"
 name: Importar respostas
-description: ""
+description: >-
+  # Endpoint
+
+  POST {{ _.endpoint }}api/v1/formulario/importar
+
+
+  Método utilizado para importar resultado de determinado formulário.
+
+
+  # Header
+
+
+  No Header é necessário informar o campo API-KEY, que deverá ser obtido através do endpoint "Get Token".
+
+
+  # Exemplo do API-KEY
+  	e156cfdc-2667-0000-936f-b01e9026790c
+
+  # Auth Type
+
+  Em Auth Type deve escolher a opção Bearer Token e informar o Token que é obtido através do endpoint "Get Token".
+
+
+  # Exemplo do Token
+  	eyJhbGciOiJIUzI1NiIsInR5cCI3IypXVCJ9.eyJqdGkiOiJhY9ExZmXyMS03OTcyLTRmMDItOTdlYi1jODIyOWY4MGVkZDkiLCJDb3Jwb3JcdGVHcm91cElkIjoiMTkiLCJVc2VySWQiOiI1NjM1IiwiVXNlck5hbWUiOiJXZWIgU2VydmljZSBJdGHDuiIsIlTzZXJDb21wYW55IjoiNDA1MiIsIlVzZXJQcm9maWxlIjoiSW50ZXJmYWNlX1dlYnNlcnZpY2UiLCJuYmYiOjE2OTAyNTAwNTksImV4cCI6MTY5MTExNDA1OSwiaWF0IjoxNjkwMjUwMRU5fQ.cpM19Up0EwWAuI-D2eLSDRfwudqfz1ipTOomsUcoBio
+
+  # Campos request (body)
+
+
+  |Nome|Tipo|Descrição|
+
+  |----|----|---------|
+
+  |formularioId|Int|Id do formulário|
+
+  |matriculaFuncionario|string|Número da matrícula do funcionário|
+
+  |### respostas|Array|Array das respostas|
+
+  |---->secaoId|Int|Id da Seção|
+
+  |---->perguntaId|Int|Id da Pergunta|
+
+  |---->respostaId|Int|Id da Pergunta|
+
+  |---->resposta|String|Descrição da Pergunta|
+
+  |---->outro|String|Texto para responsta opção Outro|
+
+
+  # Exemplo de request (AINDA NÃO ESTÁ PRONTO. O EXEMPLO DEVERÁ SER SUBSTITUIDO)
+
+  	[{
+  			"formularioId": 38,
+  			"matriculaFuncionario": 50,
+  			"respostas": [{
+  					"secaoId": 26,
+  					"perguntaId": 126,
+  					"respostaId": 12
+  					"resposta": "SIM",
+  					"outro": ""
+  				}, {
+  					"secaoId": 26,
+  					"perguntaId": 127,
+  					"respostaId": 14
+  					"resposta": "NÃO",
+  					"outro": ""
+  				}, {
+  					"secaoId": 26,
+  					"perguntaId": 128,
+  					"respostaId": 15
+  					"resposta": "NÃO",
+  					"outro": ""
+  				}, {
+  					"secaoId": 26,
+  					"perguntaId": 129,
+  					"respostaId": 16
+  					"resposta": "NÃO",
+  					"outro": ""
+  				}, {
+  					"secaoId": 26,
+  					"perguntaId": 130,
+  					"respostaId": 17
+  					"resposta": "NÃO",
+  					"outro": ""
+  			}]
+  	}]
+
+  # Campos response 
+
+
+  |Nome|Tipo|Descrição|
+
+  |----|----|---------|
+
+  |StatusCode|Int|Status code|
+
+  |IsSuccess|Boolean|Indica se o processo rodou com sucesso ou deu falha|
+
+  |Doc|Dynamic Object|Objeto de retorno dos endpoints|
+
+  |-->Id|Int|Id do Grupo Corporativo|
+
+  |### Fomrularios|Array|Array com os formulários|
+
+  |---->Id|Int|Id do formulário|
+
+  |---->Nome|String|Nome do formulário|
+
+  |---->DataAtivacao|DateTime|Data de ativação do formulário|
+
+  |##### Secoes|Array|Array das seções do formulário|
+
+  |------>Id|Int|Id da Seção|
+
+  |------>Nome|String|Nome da Seção|
+
+  |######## Perguntas|Array|Array das perguntas da Seção|
+
+  |-------->Id|Int|Id da Pergunta|
+
+  |-------->Descricao|String|Descrição da Pergunta|
+
+  |-------->TipoPergunta|String|Tipo da pergunta da Pergunta|
+
+  |-------->PossuiReposta|Bookean|Informa se a Pergunta possui uma responsta|
+
+  |-------->RespostaObrigatoria|Boolean|Informa se a Pergunta possui uma resposta obrigatória|
+
+  |########## Respostas|Array|Array de Respostas|
+
+  |---------->Id|Int|Id da Resposta|
+
+  |---------->Descricao|String|Descrição da Resposta|
+
+  |Error|Object|Objeto contendo informações de erro caso ocorra|
+
+  |-->ErrorCode|Int|Código do erro|
+
+  |-->ErrorMessage|String|Mensagem do erro|
+
+
+  # Exemplo de response (AINDA NÃO ESTÁ PRONTO. O EXEMPLO DEVERÁ SER SUBSTITUIDO)
+
+  	{
+  		"StatusCode": 200,
+  		"IsSuccess": true,
+  		"Doc": {
+  		},
+  		"Error": null
+  	}
 method: POST
 body:
   mimeType: application/json
-  text: |-
+  text: |
     [{
-        "formularioId": 38,
-        "matriculaFuncionario": 50,
-        "respostas": [{
-    		"secaoId": 26,
-    		"perguntaId": 126,
-    		"resposta": "SIM"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 127,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 128,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 129,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 130,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 131,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 132,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 133,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 134,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 135,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 136,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 137,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 138,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 139,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 140,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 141,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 142,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 143,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 144,
-    		"resposta": "NÃO"
-    	}, {
-    		"secaoId": 26,
-    		"perguntaId": 145,
-    		"resposta": "NÃO"
-    	}]
-    }]
+            "formularioId": 38,
+            "matriculaFuncionario": 50,
+            "respostas": [{
+                    "secaoId": 26,
+                    "perguntaId": 126,
+                    "resposta": "SIM"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 127,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 128,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 129,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 130,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 131,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 132,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 133,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 134,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 135,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 136,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 137,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 138,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 139,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 140,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 141,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 142,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 143,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 144,
+                    "resposta": "NÃO"
+                }, {
+                    "secaoId": 26,
+                    "perguntaId": 145,
+                    "resposta": "NÃO"
+                }
+            ]
+        }
+    ]
 parameters: []
 headers:
   - id: pair_f923752aa5894b26924d3af8a0d1b0e9
