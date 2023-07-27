@@ -1,0 +1,16 @@
+_id: ut_55365ab2fc4a42429bbb90a5f1574da1
+type: UnitTest
+parentId: uts_5ad8a974e01740458d4938f4464ef94b
+modified: 1690464189233
+created: 1690464091838
+requestId: req_ead9174c6c804672a936e1f987b45830
+name: Unauthorize
+code: |-
+  const res = await insomnia.send();
+  const body = JSON.parse(res.data);
+  const item = body;
+
+  expect(res.status).to.equal(200);
+  expect(item.IsSuccess).to.equal(false);
+  expect(item.Error.ErrorCode).to.equal(3);
+  expect(item.Error.ErrorMessage).to.equal('Usuário não autorizado');

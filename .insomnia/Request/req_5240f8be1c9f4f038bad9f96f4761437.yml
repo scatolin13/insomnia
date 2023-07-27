@@ -1,0 +1,28 @@
+_id: req_5240f8be1c9f4f038bad9f96f4761437
+type: Request
+parentId: fld_b976ef834dbd450ab3e323977ac2bbe5
+modified: 1690463846199
+created: 1690463247536
+url: "{{ _.endpoint }}api/v1/authentication/token"
+name: invalido authentication
+description: |
+  # Plano de teste
+
+  Esse plano de teste deverá retornar erro nos testes, 400
+method: GET
+body: {}
+parameters: []
+headers:
+  - id: pair_4754e43bfa414d88a93d33d1366156bc
+    name: authentication-token
+    value: "{{ _['error-authentication-token'] }}"
+    description: ""
+authentication: {}
+metaSortKey: -1687783999364.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

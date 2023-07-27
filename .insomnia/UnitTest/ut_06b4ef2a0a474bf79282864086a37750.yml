@@ -1,0 +1,16 @@
+_id: ut_06b4ef2a0a474bf79282864086a37750
+type: UnitTest
+parentId: uts_5ad8a974e01740458d4938f4464ef94b
+modified: 1690464062934
+created: 1690463301271
+requestId: req_5240f8be1c9f4f038bad9f96f4761437
+name: Error Authentication key
+code: |-
+  const res = await insomnia.send();
+  const body = JSON.parse(res.data);
+  const item = body;
+
+  expect(res.status).to.equal(200);
+  expect(item.IsSuccess).to.equal(false);
+  expect(item.Error.ErrorCode).to.equal(400);
+  expect(item.Error.ErrorMessage).to.equal('Falha ao gerar Token');
