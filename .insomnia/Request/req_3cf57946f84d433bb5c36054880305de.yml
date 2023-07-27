@@ -1,11 +1,14 @@
 _id: req_3cf57946f84d433bb5c36054880305de
 type: Request
 parentId: fld_d70f382a1a2c4a1996ab3b4263b437d3
-modified: 1690377792103
+modified: 1690416125492
 created: 1687784059025
-url: "{{ _.endpoint }}api/v1/formulario/registrar-formulario-srq20"
-name: Registrar Erro
-description: ""
+url: "{{ _.endpoint }}api/v1/formulario/importar"
+name: Importar Invalid Token Erro
+description: |
+  # Plano de teste
+
+  Esse plano de teste deverá retornar erro nos testes, 400
 method: POST
 body:
   mimeType: application/json
@@ -37,11 +40,8 @@ headers:
     value: "{{ _['api-key'] }}"
     description: ""
 authentication:
-  type: apikey
-  disabled: false
-  key: ""
-  value: ""
-  addTo: header
+  type: bearer
+  token: "{{ _['invalid-token'] }}"
 metaSortKey: -1687783999352
 isPrivate: false
 settingStoreCookies: true

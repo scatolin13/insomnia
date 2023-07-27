@@ -1,11 +1,14 @@
 _id: req_c58d48b9b00c48268a135b13a6d9bfc7
 type: Request
 parentId: fld_d70f382a1a2c4a1996ab3b4263b437d3
-modified: 1687785967014
+modified: 1690416074994
 created: 1687784390403
-url: "{{ _.endpoint }}api/v1/formulario/get-formulario-srq20"
-name: Retornar Error
-description: ""
+url: "{{ _.endpoint }}api/v1/formulario/exportar"
+name: Exportar Invalid Token Error
+description: |
+  # Plano de teste
+
+  Esse plano de teste deverá retornar erro nos testes, 400
 method: GET
 body: {}
 parameters: []
@@ -20,6 +23,7 @@ headers:
     description: ""
 authentication:
   type: bearer
+  token: "{{ _['invalid-token'] }}"
 metaSortKey: -1687783999402
 isPrivate: false
 settingStoreCookies: true
