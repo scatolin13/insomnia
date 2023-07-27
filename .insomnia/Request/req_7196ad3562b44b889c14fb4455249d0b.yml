@@ -1,0 +1,34 @@
+_id: req_7196ad3562b44b889c14fb4455249d0b
+type: Request
+parentId: fld_d70f382a1a2c4a1996ab3b4263b437d3
+modified: 1690416087784
+created: 1690416064891
+url: "{{ _.endpoint }}api/v1/formulario/exportar"
+name: Exportar Invalid ApiKey Error
+description: |
+  # Plano de teste
+
+  Esse plano de teste deverá retornar erro nos testes, 400
+method: GET
+body: {}
+parameters: []
+headers:
+  - id: pair_ce079397648f427bb958aca31e23b116
+    name: API-KEY
+    value: "{{ _['invalid-api-key'] }}"
+    description: ""
+  - id: pair_7d88d7bcea4a4212ab4befeb505f3e30
+    name: Content-Type
+    value: application/json
+    description: ""
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1687783999389.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

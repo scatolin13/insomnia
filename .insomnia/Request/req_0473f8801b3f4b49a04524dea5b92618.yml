@@ -1,0 +1,34 @@
+_id: req_0473f8801b3f4b49a04524dea5b92618
+type: Request
+parentId: fld_d70f382a1a2c4a1996ab3b4263b437d3
+modified: 1690415565445
+created: 1690415374658
+url: "{{ _.endpoint }}api/v1/formulario/exportar"
+name: Exportar OK
+description: |
+  # Plano de teste
+
+  Esse plano de teste deverá retornar sucesso nos testes, 200
+method: GET
+body: {}
+parameters: []
+headers:
+  - id: pair_ce079397648f427bb958aca31e23b116
+    name: API-KEY
+    value: "{{ _['api-key'] }}"
+    description: ""
+  - id: pair_7d88d7bcea4a4212ab4befeb505f3e30
+    name: Content-Type
+    value: application/json
+    description: ""
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1687783999377
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

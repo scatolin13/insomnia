@@ -1,0 +1,16 @@
+_id: ut_5700b30d105142d8b0d3754f8ad1d3d1
+type: UnitTest
+parentId: uts_5ad8a974e01740458d4938f4464ef94b
+modified: 1690419612240
+created: 1690377859814
+requestId: req_dbbce773f4a7434896a71770b9bfbeab
+name: Returns OK
+code: |-
+  const res = await insomnia.send();
+  const body = JSON.parse(res.data);
+  const item = body;
+
+  expect(res.status).to.equal(200);
+  expect(item.IsSuccess).to.equal(true);
+  expect(item.StatusCode).to.equal(200);
+  expect(item.Doc).to.be.an('object');

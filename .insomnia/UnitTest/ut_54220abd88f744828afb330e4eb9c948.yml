@@ -1,0 +1,10 @@
+_id: ut_54220abd88f744828afb330e4eb9c948
+type: UnitTest
+parentId: uts_1bd0790a3892485ea24d489792ba74d1
+modified: 1690416208890
+created: 1690416202308
+requestId: req_813b7f5704a349e5b070027d8b8d0a13
+name: Invalid ApiKey
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);

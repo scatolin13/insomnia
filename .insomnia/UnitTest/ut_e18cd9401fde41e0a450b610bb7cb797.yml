@@ -1,0 +1,10 @@
+_id: ut_e18cd9401fde41e0a450b610bb7cb797
+type: UnitTest
+parentId: uts_1bd0790a3892485ea24d489792ba74d1
+modified: 1690415683173
+created: 1690415666827
+requestId: req_0d2a5bc66ce24e4b9f6521a51de98196
+name: Importar OK 200
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);

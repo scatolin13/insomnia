@@ -1,0 +1,10 @@
+_id: ut_1ec767e061c5477189add9a041674128
+type: UnitTest
+parentId: uts_0c49f48dfdc547f3a0f65ab127c177c6
+modified: 1690415693751
+created: 1690415638489
+requestId: req_0473f8801b3f4b49a04524dea5b92618
+name: Exportar OK 200
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);
