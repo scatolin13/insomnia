@@ -1,10 +1,10 @@
 _id: req_dbbce773f4a7434896a71770b9bfbeab
 type: Request
-parentId: fld_d70f382a1a2c4a1996ab3b4263b437d3
-modified: 1690415524045
+parentId: fld_b976ef834dbd450ab3e323977ac2bbe5
+modified: 1690463828422
 created: 1690377780100
 url: "{{ _.endpoint }}api/v1/authentication/token"
-name: Get Token OK
+name: Correct
 description: |
   # Plano de teste
 
@@ -18,7 +18,7 @@ headers:
     value: "{{ _['authentication-token'] }}"
     description: ""
 authentication: {}
-metaSortKey: -1687783999427
+metaSortKey: -1687783999389.5
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

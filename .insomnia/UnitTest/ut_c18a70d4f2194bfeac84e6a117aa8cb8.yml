@@ -1,7 +1,7 @@
 _id: ut_c18a70d4f2194bfeac84e6a117aa8cb8
 type: UnitTest
 parentId: uts_5ad8a974e01740458d4938f4464ef94b
-modified: 1690419101495
+modified: 1690464212766
 created: 1690377875000
 requestId: req_db2ccebe6d0d45749bb8f91ed76d837e
 name: Invalid Authentication-Key
@@ -12,5 +12,5 @@ code: |-
 
   expect(res.status).to.equal(200);
   expect(item.IsSuccess).to.equal(false);
-  expect(item.Error.ErrorCode).to.equal(400);
-  expect(item.Error.ErrorMessage).to.equal('Falha ao gerar Token');
+  expect(item.Error.ErrorCode).to.equal(3);
+  expect(item.Error.ErrorMessage).to.equal('Usuário ou Senha Inválidos');
