@@ -1,7 +1,7 @@
 _id: spc_edfeb94b22b745ec885345f04b095c8e
 type: ApiSpec
 parentId: wrk_d8763a740cfa41b4ab22f3763e69d09b
-modified: 1690414388519
+modified: 1690467606048
 created: 1687573846583
 fileName: Formulario_OpenAPI
 contents: >-
@@ -96,7 +96,7 @@ contents: >-
     url: http://swagger.io
   servers:
     - url: https://localhost:44335/api/v1
-    - url: https://sendbox.faponline.com.br/api/v1
+    - url: https://sandbox.faponline.com.br/api/v1
     - url: https://prod.faponline.com.br/api/v1
   components:
     requestBodies:

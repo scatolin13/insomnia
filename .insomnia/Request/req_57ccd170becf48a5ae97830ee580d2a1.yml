@@ -1,7 +1,7 @@
 _id: req_57ccd170becf48a5ae97830ee580d2a1
 type: Request
 parentId: fld_5ee1021931294aa991e31fd051749336
-modified: 1690377330522
+modified: 1691498286734
 created: 1689728005332
 url: "{{ _.endpoint }}api/v1/authentication/token"
 name: Get Token
@@ -64,7 +64,7 @@ parameters: []
 headers:
   - id: pair_4754e43bfa414d88a93d33d1366156bc
     name: authentication-token
-    value: "{{ _['authentication-token'] }}"
+    value: DDAF3FB8820FD7EF6C6217EE6F9A389B7CC4A84B36256602DEF41FD0D3F9F47A1CAFFE3EF7920DC3CA7704FA2414CE73E40039DEA796CA77B198736C829ACB1B
     description: ""
 authentication: {}
 metaSortKey: -1689728005332
